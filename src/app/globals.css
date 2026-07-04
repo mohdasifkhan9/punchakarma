@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@import "tailwindcss";
+
+
+@theme {
+  --color-primary: #2E5E4E;
+  --color-secondary: #5F6E64;
+  --color-accent: #C8A96A;
+  --color-cream: #24332B;
+  --color-luxury-dark: #F8F6F1;
+  --color-luxury-text: #24332B;
+  --color-success: #5A8F6A;
+
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-luxury-dark);
+    color: var(--color-luxury-text);
+    font-family: var(--font-sans);
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F6F1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #C8A96A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6cb95;
+}
+
+/* Glassmorphism Styles */
+.glass-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E5DFD4 !important;
+  box-shadow: 0 10px 30px rgba(36, 51, 43, 0.03) !important;
+}
+
+.glass-card-light {
+  background: rgba(248, 245, 239, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(13, 59, 42, 0.08);
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.65) !important;
+  backdrop-filter: blur(24px) !important;
+  -webkit-backdrop-filter: blur(24px) !important;
+  border-bottom: 1px solid rgba(229, 223, 212, 0.45) !important;
+}
+
+/* Gold Gradient text */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #24332B 0%, #C8A96A 50%, #A38446 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Soft gold glow */
+.gold-glow {
+  box-shadow: 0 0 30px rgba(200, 169, 106, 0.1);
+}
+
+.gold-glow-hover:hover {
+  box-shadow: 0 0 40px rgba(200, 169, 106, 0.2);
+  transition: all 0.5s ease;
+}
+
+/* Shimmer animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, rgba(200, 169, 106, 0.02) 25%, rgba(200, 169, 106, 0.08) 50%, rgba(200, 169, 106, 0.02) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 2.5s infinite;
+}
+
+/* Magnetic button helper */
+.magnetic-btn {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.magnetic-btn:hover {
+  transform: scale(1.03);
+}
+
+/* Image reveal overlay */
+.reveal-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+
+.reveal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #F8F6F1;
+  transform: scaleY(1);
+  transform-origin: top;
+  transition: transform 0.8s cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+.reveal-wrapper.active .reveal-overlay {
+  transform: scaleY(0);
+}
+
+/* ==========================================================================
+   LIGHT MODE UTILITY CLASS OVERRIDES
+   ========================================================================== */
+
+/* Canvases and Section Backgrounds */
+.bg-\[\#071F16\] {
+  background-color: #F8F6F1 !important;
+}
+.bg-\[\#09251C\] {
+  background-color: #F4F1EA !important;
+}
+.bg-\[\#051811\] {
+  background-color: #F8F6F1 !important;
+}
+.bg-\[\#04130C\] {
+  background-color: #F4F1EA !important;
+}
+.bg-\[\#0D3B2A\] {
+  background-color: #FDFCF9 !important;
+}
+.bg-\[\#071F16\]\/50 {
+  background-color: rgba(253, 252, 249, 0.5) !important;
+}
+
+/* Component Surface Backdrops */
+.bg-primary\/20 {
+  background-color: #FDFCF9 !important;
+}
+.bg-primary\/30 {
+  background-color: #FDFCF9 !important;
+}
+.bg-primary\/40 {
+  background-color: #FFFFFF !important;
+}
+.bg-primary\/90 {
+  background-color: rgba(253, 252, 249, 0.95) !important;
+}
+.bg-primary\/95 {
+  background-color: rgba(253, 252, 249, 0.95) !important;
+}
+
+/* Text Element Color Mappings */
+.text-cream {
+  color: #24332B !important;
+}
+.text-cream\/80 {
+  color: #24332B !important;
+}
+.text-cream\/70 {
+  color: #5F6E64 !important;
+}
+.text-cream\/65 {
+  color: #5F6E64 !important;
+}
+.text-cream\/60 {
+  color: #5F6E64 !important;
+}
+.text-cream\/50 {
+  color: #7E857F !important;
+}
+.text-cream\/40 {
+  color: #7E857F !important;
+}
+.text-cream\/35 {
+  color: #7E857F !important;
+}
+.text-cream\/30 {
+  color: #7E857F !important;
+}
+.text-white {
+  color: #24332B !important;
+}
+.text-white\/90 {
+  color: #24332B !important;
+}
+.text-white\/80 {
+  color: #5F6E64 !important;
+}
+.text-white\/70 {
+  color: #5F6E64 !important;
+}
+.text-white\/60 {
+  color: #7E857F !important;
+}
+
+/* Nav links styling */
+header a, header button {
+  color: #24332B !important;
+}
+header a:hover, header button:hover {
+  color: #C8A96A !important;
+}
+
+/* Section specific visual overrides */
+
+/* Section 1: Hero Canvas overrides */
+section.relative.min-h-\[92vh\] {
+  background: linear-gradient(180deg, #FDFCF8 0%, #F5F0E6 100%) !important;
+}
+section.relative.min-h-\[92vh\] .absolute.inset-0.z-0 img {
+  opacity: 0.12 !important;
+  mix-blend-mode: multiply !important;
+}
+section.relative.min-h-\[92vh\] .bg-gradient-to-t.from-\[\#071F16\] {
+  background: linear-gradient(to top, #F5F0E6, rgba(253, 252, 248, 0.4)) !important;
+}
+section.relative.min-h-\[92vh\] .bg-gradient-to-r.from-\[\#071F16\] {
+  background: transparent !important;
+}
+section.relative.min-h-\[92vh\] h1 {
+  color: #2E5E4E !important;
+}
+section.relative.min-h-\[92vh\] p {
+  color: #5F6E64 !important;
+}
+
+/* Section 2: Trust Badges Standards */
+section.py-12.bg-\[\#09251C\] {
+  background-color: #FFFFFF !important;
+  border-top: 1px solid #E5DFD4 !important;
+  border-bottom: 1px solid #E5DFD4 !important;
+}
+section.py-12.bg-\[\#09251C\] span {
+  color: #7E857F !important;
+}
+section.py-12.bg-\[\#09251C\] .text-accent {
+  color: #2E5E4E !important;
+}
+
+/* Section 3: Editorial Heritage Block */
+section.py-24.bg-\[\#071F16\]:has(img[alt="Ayurvedic Abhyanga Massage Therapy"]) {
+  background-color: #F4F1EA !important;
+}
+section.py-24.bg-\[\#071F16\]:has(img[alt="Ayurvedic Abhyanga Massage Therapy"]) h2 {
+  color: #2E5E4E !important;
+}
+section.py-24.bg-\[\#071F16\]:has(img[alt="Ayurvedic Abhyanga Massage Therapy"]) h4 {
+  color: #24332B !important;
+}
+section.py-24.bg-\[\#071F16\]:has(img[alt="Ayurvedic Abhyanga Massage Therapy"]) p {
+  color: #5F6E64 !important;
+}
+
+/* Section 4: The Five Streams of Panchakarma */
+section.py-24.bg-\[\#09251C\]:has(button) {
+  background-color: #F8F6F1 !important;
+}
+section.py-24.bg-\[\#09251C\] button:not(.bg-accent) {
+  background-color: transparent !important;
+  border: 1px solid #E5DFD4 !important;
+  color: #5F6E64 !important;
+}
+section.py-24.bg-\[\#09251C\] button.bg-accent {
+  background-color: #2E5E4E !important;
+  border: 1px solid #2E5E4E !important;
+  color: #FFFFFF !important;
+}
+section.py-24.bg-\[\#09251C\] .grid.bg-primary\/20 {
+  background-color: #FFFFFF !important;
+  border: 1px solid #E5DFD4 !important;
+  box-shadow: 0 25px 80px rgba(36, 51, 43, 0.05) !important;
+}
+section.py-24.bg-\[\#09251C\] .grid.bg-primary\/20 h3 {
+  color: #2E5E4E !important;
+}
+section.py-24.bg-\[\#09251C\] .grid.bg-primary\/20 p {
+  color: #24332B !important;
+}
+section.py-24.bg-\[\#09251C\] .grid.bg-primary\/20 li {
+  color: #24332B !important;
+}
+
+/* Section 5: Solutions Grid */
+section.py-24.bg-\[\#071F16\]:has(.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3) {
+  background-color: #FFFFFF !important;
+}
+section.py-24.bg-\[\#071F16\]:has(.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3) .glass-card {
+  background-color: #F8F6F1 !important;
+  border: 1px solid #E5DFD4 !important;
+  box-shadow: none !important;
+  transition: all 0.4s ease !important;
+}
+section.py-24.bg-\[\#071F16\]:has(.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3) .glass-card:hover {
+  background-color: #FFFFFF !important;
+  border-color: #C8A96A !important;
+  transform: translateY(-5px) !important;
+  box-shadow: 0 20px 40px rgba(36, 51, 43, 0.06) !important;
+}
+section.py-24.bg-\[\#071F16\]:has(.grid-cols-1.md\:grid-cols-2.lg\:grid-cols-3) h3 {
+  color: #2E5E4E !important;
+}
+
+/* Section 6: Purification Journey Timeline */
+section.py-24.bg-\[\#051811\] {
+  background-color: #F4F1EA !important;
+}
+section.py-24.bg-\[\#051811\] .bg-accent, section.py-24.bg-\[\#051811\] .bg-primary {
+  background-color: #2E5E4E !important;
+  color: #FFFFFF !important;
+}
+section.py-24.bg-\[\#051811\] h3 {
+  color: #2E5E4E !important;
+}
+section.py-24.bg-\[\#051811\] p {
+  color: #5F6E64 !important;
+}
+
+/* Section 7: Packages */
+#packages-section {
+  background-color: #FFFFFF !important;
+}
+#packages-section .grid > div {
+  background-color: #FDFCF9 !important;
+  border: 1px solid #E5DFD4 !important;
+}
+#packages-section #kayakalpa-immersion-14-day {
+  border: 1.5px solid #C8A96A !important;
+  box-shadow: 0 30px 70px rgba(200, 169, 106, 0.08) !important;
+}
+#packages-section h3 {
+  color: #24332B !important;
+}
+#packages-section .text-cream {
+  color: #24332B !important;
+}
+#packages-section .font-serif.text-2xl {
+  color: #2E5E4E !important;
+}
+
+/* Footer Section */
+footer.bg-\[\#04130C\] {
+  background-color: #F4F1EA !important;
+  color: #24332B !important;
+  border-top: 1px solid #E5DFD4 !important;
+}
+footer.bg-\[\#04130C\] .text-cream {
+  color: #24332B !important;
+}
+footer.bg-\[\#04130C\] input {
+  background-color: #FFFFFF !important;
+  color: #24332B !important;
+  border: 1px solid #E5DFD4 !important;
+}
+footer.bg-\[\#04130C\] input::placeholder {
+  color: #7E857F !important;
+}
+
+/* Headings colors */
+h2.font-serif.text-3xl, h2.font-serif.text-4xl, h2.font-serif.text-5xl, h2.font-serif.text-6xl {
+  color: #2E5E4E !important;
+}
+
+/* Borders and lines */
+.border-accent\/10 {
+  border-color: rgba(229, 223, 212, 0.5) !important;
+}
+.border-accent\/15 {
+  border-color: #E5DFD4 !important;
+}
+.border-accent\/20 {
+  border-color: #E5DFD4 !important;
+}
+.border-accent\/25 {
+  border-color: #E5DFD4 !important;
+}
+.border-accent\/30 {
+  border-color: #E5DFD4 !important;
+}
+
